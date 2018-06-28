@@ -1,4 +1,4 @@
-class Mutations::LoginMutation < GraphQL::Schema::Mutation
+class Mutations::Auth::LoginMutation < GraphQL::Schema::Mutation
   graphql_name  'Login'
 
   # Accessible from `inputs` in the resolve function:

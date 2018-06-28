@@ -1,12 +1,11 @@
-class Types::RaceEthnicityEnum < Types::BaseEnum
-  graphql_name 'RaceEthnicity'
+class Types::ParentsHighestEducationEnum < Types::BaseEnum
+  graphql_name 'ParentsHighestEducation'
 
-  value 'AIAN', 'American Indian or Alaska Native', value: :american_indian_or_alaska_native
-  value 'ASIAN', 'Asian', value: :asian
-  value 'BLACK', 'Black or African American', value: :black
-  value 'HLSO', 'Hispanic, Latino, or Spanish Origin', value: :hispanic_latino_or_spanish_origin
-  value 'NHPI', 'Native Hawaiian or Other Pacific Islander', value: :native_hawaiian_or_other_pacific_islander
-  value 'MENA', 'Middle Eastern or North African', value: :middle_eastern_or_north_african
-  value 'WHITE', 'White', value: :white
-  value 'OTHER', 'Other', value: :other
+  value 'DID_NOT_ATTEND_SCHOOL', 'Did not attend school', value: 'did_not_attend_school'
+  value 'DID_NOT_GRADUATE_HIGH_SCHOOL', 'Did not graduate high school', value: 'did_not_graduate_high_school'
+  value 'GRADUATED_HIGH_SCHOOL_OR_GED', 'Graduated high school or GED', value: 'graduated_high_school_or_ged'
+  value 'SOME_COLLEGE', 'Some college', value: 'some_college'
+  value 'GRADUATED_COLLEGE', 'Graduated college', value: 'graduated_college'
+  value 'SOME_GRADUATE_SCHOOL', 'Some graduate school', value: 'some_graduate_school'
+  value 'COMPLETED_GRADUATE_SCHOOL', 'Completed graduate school', value: 'completed_graduate_school'
 end

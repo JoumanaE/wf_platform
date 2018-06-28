@@ -1,4 +1,4 @@
-class Mutations::RegisterMutation < GraphQL::Schema::Mutation
+class Mutations::Auth::RegisterMutation < GraphQL::Schema::Mutation
   graphql_name  'Register'
 
   argument :authProvider, Types::AuthProviderInput, description: "AuthProvider Signup Data", required: true
@@ -19,7 +19,7 @@ class Mutations::RegisterMutation < GraphQL::Schema::Mutation
         context[:warden].set_user(user)
         { user: user }
       else
-        raise GraphQL::ExecutionError.new("Could not create user")
+        raise GraphQL::ExecutionError.new("Unable to create user")
       end
     end
   end

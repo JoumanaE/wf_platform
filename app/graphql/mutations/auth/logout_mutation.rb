@@ -1,4 +1,4 @@
-class Mutations::LogoutMutation < GraphQL::Schema::Mutation
+class Mutations::Auth::LogoutMutation < GraphQL::Schema::Mutation
   graphql_name  'Logout'
 
   field :result, Boolean, null: false
