@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_22_165856) do
+ActiveRecord::Schema.define(version: 2018_06_27_194056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,30 @@ ActiveRecord::Schema.define(version: 2018_06_22_165856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
+  end
+
+  create_table "hubs", force: :cascade do |t|
+    t.string "name", default: "", null: false
+  end
+
+  create_table "pods", force: :cascade do |t|
+    t.bigint "hub_id"
+    t.string "name", default: "", null: false
+    t.index ["hub_id"], name: "index_pods_on_hub_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "code", default: "", null: false
+    t.string "type", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.bigint "hub_id"
+    t.bigint "pod_id"
+    t.string "name", default: "", null: false
+    t.index ["hub_id"], name: "index_schools_on_hub_id"
+    t.index ["pod_id"], name: "index_schools_on_pod_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|

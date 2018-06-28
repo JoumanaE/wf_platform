@@ -9,7 +9,7 @@ class GraphqlController < ApplicationController
     context = {
       warden: warden
     }
-    result = PrairieMeadowSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+    result = WFPlatformSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
   end
 
